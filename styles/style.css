@@ -55,3 +55,18 @@
     line-height: 1.4;
   }
   
+  #dupeResults {
+    display: grid;
+    grid-template-columns: repeat(auto-fill, minmax(220px, 1fr));
+    gap: 1.5rem;
+    padding: 0;
+    list-style: none;
+    margin-top: 2rem;
+  }
+  
+  #perfumeImage {
+    max-width: 200px;
+    margin: 1rem auto;
+    display: block;
+    border-radius: var(--pico-border-radius);
+  }
