@@ -1,6 +1,4 @@
 document.addEventListener("DOMContentLoaded", async () => {
-  console.log("perfume.js is connected!");
-
   const params = new URLSearchParams(window.location.search);
 
   const id = params.get("id");
@@ -18,7 +16,6 @@ document.addEventListener("DOMContentLoaded", async () => {
     return;
   }
 
-  // Render selected perfume info
   nameEl.textContent = name || "Unnamed Perfume";
   imgEl.src = image && image.trim() !== ""
     ? image
@@ -30,18 +27,10 @@ document.addEventListener("DOMContentLoaded", async () => {
   imgEl.style.borderRadius = "var(--pico-border-radius)";
   descEl.textContent = description || "No description provided.";
 
-  // Function to fetch dupes
-  const url = `https://fragrancefinder-api.p.rapidapi.com/dupes/${id}`;
-  const options = {
-    method: "GET",
-    headers: {
-      "x-rapidapi-key": "b9d9fa1b41msh1830115e5b81cf6p170c07jsnba165b6b0be1",
-      "x-rapidapi-host": "fragrancefinder-api.p.rapidapi.com"
-    }
-  };
+  const url = `/api/dupes/${id}`;
 
   try {
-    const res = await fetch(url, options);
+    const res = await fetch(url);
     const data = await res.json();
     const dupes = data.recommendations;
 

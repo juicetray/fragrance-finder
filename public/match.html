@@ -1,0 +1,26 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <title>Match by Notes | Fragrance Finder</title>
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/@picocss/pico@2/css/pico.min.css" />
+    <link rel="stylesheet" href="./styles/style.css" />
+  </head>
+  <body>
+    <main class="container">
+      <h1>Match by Scent Notes</h1>
+      <form id="matchForm">
+        <label><input type="checkbox" name="notes" value="amber"> Amber</label>
+        <label><input type="checkbox" name="notes" value="citrus"> Citrus</label>
+        <label><input type="checkbox" name="notes" value="woody"> Woody</label>
+        <!-- Add more scent options -->
+        <button type="submit">Find Matches</button>
+      </form>
+      
+      <ul id="matchResults"></ul>
+      <script src="./js/match.js" defer></script>
+      
+    </main>
+  </body>
+</html>

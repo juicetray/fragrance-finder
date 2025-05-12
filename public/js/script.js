@@ -53,18 +53,10 @@ async function fetchPerfumesForBrand(brand) {
   loadingItem.textContent = `Loading perfumes for "${brand}"...`;
   resultList.appendChild(loadingItem);
 
-  const url = `https://fragrancefinder-api.p.rapidapi.com/perfumes/search?q=${encodeURIComponent(brand)}`;
-
-  const options = {
-    method: 'GET',
-    headers: {
-      'x-rapidapi-key': 'b9d9fa1b41msh1830115e5b81cf6p170c07jsnba165b6b0be1',
-      'x-rapidapi-host': 'fragrancefinder-api.p.rapidapi.com'
-    }
-  };
+  const url = `/api/perfumes?q=${encodeURIComponent(brand)}`;
 
   try {
-    const res = await fetch(url, options);
+    const res = await fetch(url);
     const data = await res.json();
     console.log(data);
 
@@ -84,7 +76,7 @@ async function fetchPerfumesForBrand(brand) {
       const img = document.createElement('img');
       img.src = perfume.image && perfume.image.trim() !== ''
         ? perfume.image
-        : 'https://via.placeholder.com/150?text=No+Image';
+        : 'https://shoperfumes.ca/wp-content/uploads/2022/07/coming-soon-picture.jpg';
       img.alt = perfume.perfume;
       img.style.width = '100%';
       img.style.maxWidth = '150px';

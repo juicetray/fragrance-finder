@@ -1,0 +1,110 @@
+/* Brand list container */
+#brandContainer {
+  max-height: 300px;
+  overflow-y: auto;
+  border: 1px solid var(--pico-muted-border-color);
+  border-radius: var(--pico-border-radius);
+  padding: 0.5rem;
+}
+
+/* Perfume result grid */
+#perfumeResults {
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(220px, 1fr));
+  gap: 1rem;
+  padding-left: 0;
+}
+
+#perfumeResults li {
+  list-style: none;
+}
+
+#perfumeResults article {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  padding: 1rem;
+  height: 400px;
+  border: 1px solid var(--pico-muted-border-color);
+  border-radius: var(--pico-border-radius);
+  background: var(--pico-card-background-color, var(--pico-background-color));
+  overflow: hidden;
+}
+
+#perfumeResults article img {
+  width: 100%;
+  max-width: 150px;
+  height: auto;
+  border-radius: var(--pico-border-radius);
+  object-fit: cover;
+}
+
+#perfumeResults article h3 {
+  margin: 0.5rem 0 0.25rem;
+  font-size: 1.1rem;
+  text-align: center;
+}
+
+#perfumeResults article p {
+  flex: 1;
+  overflow-y: auto;
+  max-height: 100%;
+  width: 100%;
+  padding-right: 0.5rem;
+  font-size: 0.9rem;
+  color: var(--pico-muted-color);
+  text-align: left;
+  line-height: 1.4;
+}
+
+/* Dupe results grid */
+#dupeResults {
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(220px, 1fr));
+  gap: 1.5rem;
+  padding: 0;
+  margin-top: 2rem;
+}
+
+#matchResults {
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(220px, 1fr));
+  gap: 1.5rem;
+  padding: 0;
+  list-style: none;
+  margin-top: 2rem;
+}
+
+#matchResults li, #dupeResults li {
+  list-style: none;
+}
+
+/* Centered selected perfume image */
+#perfumeImage {
+  max-width: 200px;
+  margin: 1rem auto;
+  display: block;
+  border-radius: var(--pico-border-radius);
+}
+
+/* Welcome page styles */
+main {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  padding: 4rem 1rem;
+  text-align: center;
+}
+
+.actions {
+  display: flex;
+  flex-direction: column;
+  gap: 1.5rem;
+  margin-top: 2rem;
+}
+
+@media (min-width: 600px) {
+  .actions {
+    flex-direction: row;
+  }
+}
